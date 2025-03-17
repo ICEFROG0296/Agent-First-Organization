@@ -1,0 +1,61 @@
+[
+    {
+        "task_name": "Assist in scheduling medical appointments",
+        "steps": [
+            "Inquire about the type of medical appointment the user needs and any specific preferences or requirements (e.g., date, time, preferred doctor).",
+            "Use the FaissRAGWorker to check the availability of appointments that match the user's preferences from the company's internal documentation.",
+            "Present the available appointment options to the user using the MessageWorker.",
+            "Confirm the user's choice of appointment and finalize the scheduling process.",
+            "Provide the user with appointment details and offer further assistance if needed."
+        ]
+    },
+    {
+        "task_name": "Provide information on medical services",
+        "steps": [
+            "Use the MessageWorker to ask the user for more details about the medical service they are interested in (e.g., type of service, location, specific requirements).",
+            "Employ the FaissRAGWorker to search the company's internal documentation for specific information related to the user's query about medical services.",
+            "Utilize the MessageWorker to deliver the information retrieved by FaissRAGWorker to the user, ensuring the response is clear and concise.",
+            "Ask the user if they need more information or have further questions about other medical services.",
+            "If the user has additional queries, repeat steps 2 and 3; otherwise, thank the user and close the interaction."
+        ]
+    },
+    {
+        "task_name": "Answer frequently asked health-related questions",
+        "steps": [
+            "Greet the user and ask for their health-related question.",
+            "Use FaissRAGWorker to search the company's internal documentation and FAQs for the most relevant answer to the user's question.",
+            "Deliver the answer to the user using MessageWorker.",
+            "Ask the user if they have any more questions or need further assistance.",
+            "If the user has additional questions, repeat the process from step 2. If not, thank the user and end the conversation."
+        ]
+    },
+    {
+        "task_name": "Provide information on Medicare health and drug plans",
+        "steps": [
+            "Use the FaissRAGWorker to retrieve information about Medicare health and drug plans from the company's internal documentation.",
+            "Utilize the MessageWorker to deliver the retrieved information to the user in an understandable format.",
+            "Ask the user if they have any specific questions or need additional details about certain plans.",
+            "If the user has further questions, use the FaissRAGWorker again to find more detailed information and communicate it using the MessageWorker.",
+            "Confirm that the user has received all the information they need and offer assistance in scheduling a consultation if required."
+        ]
+    },
+    {
+        "task_name": "Help compare healthcare providers",
+        "steps": [
+            "Inquire about the user's specific needs and preferences regarding healthcare providers, such as location, specialty, and insurance acceptance using MessageWorker.",
+            "Use FaissRAGWorker to find information about healthcare providers that match the user's criteria.",
+            "Present the information about the matching healthcare providers to the user using MessageWorker.",
+            "Ask if the user needs additional information or has any other preferences using MessageWorker.",
+            "Confirm the user's choice or offer further assistance using MessageWorker."
+        ]
+    },
+    {
+        "task_name": "Provide assistance with Medicare account management",
+        "steps": [
+            "Identify the specific issue or task the user needs help with regarding their Medicare account.",
+            "Use FaissRAGWorker to provide detailed information or instructions based on the company's internal documentation related to the user's issue.",
+            "If additional real-time data is required, utilize SearchWorker to fetch the necessary information.",
+            "Confirm with the user if their issue has been resolved or if they need further assistance."
+        ]
+    }
+]

@@ -1,0 +1,64 @@
+{
+    "role": "healthcare support assistant",
+    "user_objective": "The healthcare support assistant helps patients schedule appointments, provide information on medical services, and answer health-related FAQs.",
+    "builder_objective": "The healthcare assistant collects patient contact details for follow-ups.",
+    "domain": "healthcare",
+    "intro": "MediCare Plus provides healthcare services including general check-ups, specialist consultations, and wellness programs.",
+    "task_docs": [
+        {
+            "source": "https://www.medicare.gov/",
+            "num": 10
+        }
+    ],
+    "rag_docs": [
+        {
+            "source": "https://www.medicare.gov/",
+            "num": 10
+        }
+    ],
+    "tasks": [],
+    "workers": [
+        {
+            "id": "worker-1",
+            "name": "FaissRAGWorker",
+            "path": "faiss_rag_worker.py"
+        },
+        {
+            "id": "worker-2",
+            "name": "MessageWorker",
+            "path": "message_worker.py"
+        },
+        {
+            "id": "worker-3",
+            "name": "SearchWorker",
+            "path": "search_worker.py"
+        },
+        {
+            "id": "worker-4",
+            "name": "DefaultWorker",
+            "path": "default_worker.py"
+        }
+    ],
+    "tools": [
+        {
+            "id": "worker-1",
+            "name": "FaissRAGWorker",
+            "path": "faiss_rag_worker.py"
+        },
+        {
+            "id": "worker-2",
+            "name": "MessageWorker",
+            "path": "message_worker.py"
+        },
+        {
+            "id": "worker-3",
+            "name": "SearchWorker",
+            "path": "search_worker.py"
+        },
+        {
+            "id": "worker-4",
+            "name": "DefaultWorker",
+            "path": "default_worker.py"
+        }
+    ]
+}

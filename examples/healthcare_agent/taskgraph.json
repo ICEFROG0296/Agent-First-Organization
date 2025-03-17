@@ -1,0 +1,898 @@
+{
+    "nodes": [
+        [
+            "0",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Hello! Welcome to our Healthcare Support Assistant. How can I assist you with your healthcare needs today? Whether you need help scheduling an appointment, information on our services, or have health-related questions, I'm here to help.",
+                    "task": "start message",
+                    "directed": false
+                },
+                "limit": 1,
+                "type": "start"
+            }
+        ],
+        [
+            "1",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "What type of medical appointment do you need and do you have any specific preferences or requirements, such as date, time, or preferred doctor?",
+                    "task": "Inquire about the type of medical appointment the user needs and any specific preferences or requirements (e.g., date, time, preferred doctor).",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "2",
+            {
+                "resource": {
+                    "id": "worker-1",
+                    "name": "FaissRAGWorker"
+                },
+                "attribute": {
+                    "value": "",
+                    "task": "Use the FaissRAGWorker to check the availability of appointments that match the user's preferences from the company's internal documentation.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "3",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Here are the available appointment options that match your preferences.",
+                    "task": "Present the available appointment options to the user using the MessageWorker.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "4",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Can you please confirm your choice of appointment so that I can finalize the scheduling process?",
+                    "task": "Confirm the user's choice of appointment and finalize the scheduling process.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "5",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Your appointment is scheduled. Here are the details. Let me know if you need any further assistance.",
+                    "task": "Provide the user with appointment details and offer further assistance if needed.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "6",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Could you please provide more details about the medical service you are interested in? For example, the type of service, location, or any specific requirements you might have.",
+                    "task": "Use the MessageWorker to ask the user for more details about the medical service they are interested in (e.g., type of service, location, specific requirements).",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "7",
+            {
+                "resource": {
+                    "id": "worker-1",
+                    "name": "FaissRAGWorker"
+                },
+                "attribute": {
+                    "value": "",
+                    "task": "Employ the FaissRAGWorker to search the company's internal documentation for specific information related to the user's query about medical services.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "8",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Based on the information from our internal resources, here is what we found about the medical service you are interested in...",
+                    "task": "Utilize the MessageWorker to deliver the information retrieved by FaissRAGWorker to the user, ensuring the response is clear and concise.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "9",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Do you need more information or have any further questions about other medical services?",
+                    "task": "Ask the user if they need more information or have further questions about other medical services.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "10",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Thank you for reaching out to us. If you have any more questions in the future, feel free to contact us. Have a great day!",
+                    "task": "If the user has additional queries, repeat steps 2 and 3; otherwise, thank the user and close the interaction.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "11",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Hello! How can I assist you with your health-related question today?",
+                    "task": "Greet the user and ask for their health-related question.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "12",
+            {
+                "resource": {
+                    "id": "worker-1",
+                    "name": "FaissRAGWorker"
+                },
+                "attribute": {
+                    "value": "",
+                    "task": "Use FaissRAGWorker to search the company's internal documentation and FAQs for the most relevant answer to the user's question.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "13",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Based on the information from our resources, here is what I found for you...",
+                    "task": "Deliver the answer to the user using MessageWorker.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "14",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Do you have any more questions, or is there anything else I can assist you with?",
+                    "task": "Ask the user if they have any more questions or need further assistance.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "15",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Thank you for reaching out. If you have further questions in the future, feel free to contact us. Have a great day!",
+                    "task": "If the user has additional questions, repeat the process from step 2. If not, thank the user and end the conversation.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "16",
+            {
+                "resource": {
+                    "id": "worker-1",
+                    "name": "FaissRAGWorker"
+                },
+                "attribute": {
+                    "value": "",
+                    "task": "Use the FaissRAGWorker to retrieve information about Medicare health and drug plans from the company's internal documentation.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "17",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Here is the information about Medicare health and drug plans that you requested.",
+                    "task": "Utilize the MessageWorker to deliver the retrieved information to the user in an understandable format.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "18",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Do you have any specific questions or need more details about certain plans?",
+                    "task": "Ask the user if they have any specific questions or need additional details about certain plans.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "19",
+            {
+                "resource": {
+                    "id": "worker-1",
+                    "name": "FaissRAGWorker"
+                },
+                "attribute": {
+                    "value": "",
+                    "task": "If the user has further questions, use the FaissRAGWorker again to find more detailed information and communicate it using the MessageWorker.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "20",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Have you received all the information you need? Would you like assistance in scheduling a consultation?",
+                    "task": "Confirm that the user has received all the information they need and offer assistance in scheduling a consultation if required.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "21",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Can you please specify your preferences for healthcare providers, such as location, specialty, or insurance acceptance?",
+                    "task": "Inquire about the user's specific needs and preferences regarding healthcare providers, such as location, specialty, and insurance acceptance using MessageWorker.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "22",
+            {
+                "resource": {
+                    "id": "worker-1",
+                    "name": "FaissRAGWorker"
+                },
+                "attribute": {
+                    "value": "",
+                    "task": "Use FaissRAGWorker to find information about healthcare providers that match the user's criteria.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "23",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Here are some healthcare providers that match your criteria.",
+                    "task": "Present the information about the matching healthcare providers to the user using MessageWorker.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "24",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Do you need any additional information or have any other preferences?",
+                    "task": "Ask if the user needs additional information or has any other preferences using MessageWorker.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "25",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Have you made your choice, or do you need further assistance?",
+                    "task": "Confirm the user's choice or offer further assistance using MessageWorker.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "26",
+            {
+                "resource": {
+                    "id": "default_worker",
+                    "name": "DefaultWorker"
+                },
+                "attribute": {
+                    "value": "Could you please describe the issue you are experiencing with your Medicare account?",
+                    "task": "Identify the specific issue or task the user needs help with regarding their Medicare account.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "27",
+            {
+                "resource": {
+                    "id": "worker-1",
+                    "name": "FaissRAGWorker"
+                },
+                "attribute": {
+                    "value": "Based on our records, here is the information you need to address your issue.",
+                    "task": "Use FaissRAGWorker to provide detailed information or instructions based on the company's internal documentation related to the user's issue.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "28",
+            {
+                "resource": {
+                    "id": "worker-3",
+                    "name": "SearchWorker"
+                },
+                "attribute": {
+                    "value": "I will look up the latest information for you. Please hold on a moment.",
+                    "task": "If additional real-time data is required, utilize SearchWorker to fetch the necessary information.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "29",
+            {
+                "resource": {
+                    "id": "worker-2",
+                    "name": "MessageWorker"
+                },
+                "attribute": {
+                    "value": "Has your issue been resolved, or do you need further assistance?",
+                    "task": "Confirm with the user if their issue has been resolved or if they need further assistance.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ]
+    ],
+    "edges": [
+        [
+            "0",
+            "1",
+            {
+                "intent": "User wants to schedule a medical appointment",
+                "attribute": {
+                    "weight": 1,
+                    "pred": true,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "1",
+            "2",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "2",
+            "3",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "3",
+            "4",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "4",
+            "5",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "0",
+            "6",
+            {
+                "intent": "User seeks information on available medical services",
+                "attribute": {
+                    "weight": 1,
+                    "pred": true,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "6",
+            "7",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "7",
+            "8",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "8",
+            "9",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "9",
+            "10",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "0",
+            "11",
+            {
+                "intent": "User has health-related questions",
+                "attribute": {
+                    "weight": 1,
+                    "pred": true,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "11",
+            "12",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "12",
+            "13",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "13",
+            "14",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "14",
+            "15",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "0",
+            "16",
+            {
+                "intent": "User wants to understand Medicare plans",
+                "attribute": {
+                    "weight": 1,
+                    "pred": true,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "16",
+            "17",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "17",
+            "18",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "18",
+            "19",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "19",
+            "20",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "0",
+            "21",
+            {
+                "intent": "User wants to compare care providers",
+                "attribute": {
+                    "weight": 1,
+                    "pred": true,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "21",
+            "22",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "22",
+            "23",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "23",
+            "24",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "24",
+            "25",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "0",
+            "26",
+            {
+                "intent": "User needs assistance with Medicare account",
+                "attribute": {
+                    "weight": 1,
+                    "pred": true,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "26",
+            "27",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "27",
+            "28",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "28",
+            "29",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ]
+    ],
+    "role": "healthcare support assistant",
+    "user_objective": "The healthcare support assistant helps patients schedule appointments, provide information on medical services, and answer health-related FAQs.",
+    "builder_objective": "The healthcare assistant collects patient contact details for follow-ups.",
+    "domain": "healthcare",
+    "intro": "MediCare Plus provides healthcare services including general check-ups, specialist consultations, and wellness programs.",
+    "task_docs": [
+        {
+            "source": "https://www.medicare.gov/",
+            "num": 10
+        }
+    ],
+    "rag_docs": [
+        {
+            "source": "https://www.medicare.gov/",
+            "num": 10
+        }
+    ],
+    "tasks": [],
+    "workers": [
+        {
+            "id": "worker-1",
+            "name": "FaissRAGWorker",
+            "path": "faiss_rag_worker.py"
+        },
+        {
+            "id": "worker-2",
+            "name": "MessageWorker",
+            "path": "message_worker.py"
+        },
+        {
+            "id": "worker-3",
+            "name": "SearchWorker",
+            "path": "search_worker.py"
+        },
+        {
+            "id": "worker-4",
+            "name": "DefaultWorker",
+            "path": "default_worker.py"
+        }
+    ],
+    "tools": [
+        {
+            "id": "worker-1",
+            "name": "FaissRAGWorker",
+            "path": "faiss_rag_worker.py"
+        },
+        {
+            "id": "worker-2",
+            "name": "MessageWorker",
+            "path": "message_worker.py"
+        },
+        {
+            "id": "worker-3",
+            "name": "SearchWorker",
+            "path": "search_worker.py"
+        },
+        {
+            "id": "worker-4",
+            "name": "DefaultWorker",
+            "path": "default_worker.py"
+        }
+    ],
+    "nluapi": "",
+    "slotfillapi": ""
+}
